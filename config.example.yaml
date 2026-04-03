@@ -27,8 +27,8 @@ compute_type: "auto"
 
 # Global hotkey to start/stop recording
 # Format: <modifier>+<modifier>+<key>
-# Examples: <ctrl>+<shift>+r, <cmd>+<shift>+r (macOS)
-hotkey: "<ctrl>+<shift>+r"
+# Examples: <ctrl>+<space>, <cmd>+<shift>+r (macOS)
+hotkey: "<ctrl>+<space>"
 
 # Audio capture settings
 sample_rate: 16000          # 16kHz is what Whisper expects

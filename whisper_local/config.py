@@ -23,7 +23,7 @@ class AppConfig:
     language: str = "es"
     device: str = "auto"
     compute_type: str = "auto"
-    hotkey: str = "<ctrl>+<shift>+r"
+    hotkey: str = "<ctrl>+<space>"
     sample_rate: int = 16000
     silence_threshold: float = 0.01
     continuous_chunk_seconds: int = 5

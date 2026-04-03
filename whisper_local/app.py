@@ -64,14 +64,18 @@ class WhisperLocalApp:
         hotkey_combo = self._parse_hotkey(self._config.hotkey)
 
         try:
-            with keyboard.GlobalHotKeys({hotkey_combo: self._on_hotkey}) as listener:
-                listener.daemon = True
-                self._console.print(
-                    f"\nReady. Press [bold cyan]{self._config.hotkey}[/bold cyan] to record.\n"
-                )
+            listener = keyboard.GlobalHotKeys({hotkey_combo: self._on_hotkey})
+            listener.daemon = True
+            listener.start()
 
-                while not self._shutdown_event.is_set():
-                    self._shutdown_event.wait(timeout=0.5)
+            self._console.print(
+                f"\nReady. Press [bold cyan]{self._config.hotkey}[/bold cyan] to record.\n"
+            )
+
+            while not self._shutdown_event.is_set():
+                self._shutdown_event.wait(timeout=0.5)
+
+            listener.stop()
 
         except Exception as e:
             self._console.print(f"[red]Error with hotkey listener: {e}[/red]")

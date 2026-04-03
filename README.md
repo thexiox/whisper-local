@@ -63,7 +63,7 @@ Key settings:
 model_size: "large-v3"    # tiny, base, small, medium, large-v3
 language: "es"            # Language code or "auto" for detection
 device: "auto"            # auto, cpu, cuda
-hotkey: "<ctrl>+<shift>+r"
+hotkey: "<ctrl>+<space>"
 ```
 
 ## Usage
