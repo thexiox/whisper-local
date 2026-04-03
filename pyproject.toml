@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whisper-local"
+version = "0.1.0"
+description = "Local speech-to-text with hotkey. Record, transcribe, clipboard. No API, no cloud, no cost."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "thexiox"},
+]
+keywords = ["whisper", "speech-to-text", "transcription", "local", "offline"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+dependencies = [
+    "faster-whisper>=1.0.0",
+    "sounddevice>=0.4.6",
+    "numpy>=1.24.0",
+    "pynput>=1.7.6",
+    "pyperclip>=1.8.2",
+    "pyyaml>=6.0",
+    "rich>=13.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/thexiox/whisper-local"
+Repository = "https://github.com/thexiox/whisper-local"
+Issues = "https://github.com/thexiox/whisper-local/issues"
+
+[project.scripts]
+whisper-local = "whisper_local.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["whisper_local*"]

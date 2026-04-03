@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+config.yaml
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+
+# Huggingface / Whisper model cache
+.cache/
+
+# Docs (generated during brainstorming, not part of the app)
+docs/

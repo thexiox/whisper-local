@@ -1,0 +1,39 @@
+# whisper-local configuration
+# Copy this file to config.yaml and edit as needed.
+# CLI flags override these values.
+
+# Whisper model size
+# Options: tiny (~75MB), base (~150MB), small (~500MB), medium (~1.5GB), large-v3 (~3GB)
+# Bigger = more accurate but slower and more RAM
+model_size: "large-v3"
+
+# Transcription language
+# "es" forces Spanish (faster and more accurate for single-language use)
+# "en" for English, "pt" for Portuguese, etc.
+# "auto" for auto-detection (slower, useful for multilingual audio)
+language: "es"
+
+# Inference device
+# "auto" detects CUDA GPU, falls back to CPU
+# "cpu" forces CPU
+# "cuda" forces GPU (fails if no CUDA available)
+device: "auto"
+
+# Computation type
+# "auto" picks float16 for GPU, int8 for CPU
+# "float16" better quality on GPU
+# "int8" faster on CPU, slight quality trade-off
+compute_type: "auto"
+
+# Global hotkey to start/stop recording
+# Format: <modifier>+<modifier>+<key>
+# Examples: <ctrl>+<shift>+r, <cmd>+<shift>+r (macOS)
+hotkey: "<ctrl>+<shift>+r"
+
+# Audio capture settings
+sample_rate: 16000          # 16kHz is what Whisper expects
+silence_threshold: 0.01     # Below this amplitude is considered silence
+
+# Continuous mode settings
+# Chunk duration in seconds for continuous transcription
+continuous_chunk_seconds: 5
